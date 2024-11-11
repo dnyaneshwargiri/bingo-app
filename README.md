@@ -35,6 +35,7 @@ Below are frameworks/ libraries used to bootstrap this project.
 - ![Ant-Design](https://img.shields.io/badge/-AntDesign-%230170FE?style=for-the-badge&logo=ant-design&logoColor=white)
 - ![Pnpm](https://img.shields.io/badge/pnpm-%232C8EBB.svg?style=for-the-badge&logo=pnpm&logoColor=white)
 - ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+- ![Jest](https://img.shields.io/badge/jest-%23404d59.svg?style=for-the-badge&logo=jest&logoColor=%2361DAFB)
 
 ## Getting Started
 
