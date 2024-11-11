@@ -1,13 +1,16 @@
 {
   "name": "bingo-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "start": "vite preview",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watchAll"
   },
   "dependencies": {
     "react": "^18.3.1",
