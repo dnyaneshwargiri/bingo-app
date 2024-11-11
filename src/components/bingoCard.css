@@ -1,14 +1,12 @@
-/* Center the Bingo card on the screen */
 .bingo-card-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
+  height: 100vh; 
   padding: 20px;
   box-sizing: border-box;
 }
 
-/* The bingo grid */
 .bingo-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -17,7 +15,6 @@
   max-width: 500px;
 }
 
-/* Styling for each bingo cell */
 .bingo-cell {
   display: flex;
   align-items: center;
@@ -25,22 +22,20 @@
   height: 100px;
   text-align: center;
   font-size: 14px;
-  background-color: #f0f0f0; /* Light gray background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+  background-color: #f0f0f0; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s;
 }
 
-/* Styling for selected cells */
 .bingo-cell.selected {
-  background-color: #d1e7dd; /* Change color for selected cells */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Darker shadow when selected */
+  background-color: #d1e7dd; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Styling for the middle cell */
 .middle-circle {
-  background-color: #ffffff; /* White background for middle cell */
+  background-color: #ffffff;
   border: 2px solid #ccc;
   border-radius: 50%;
   font-weight: bold;
