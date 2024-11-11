@@ -15,7 +15,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#usage">Live Demo</a></li>
   </ol>
 </details>
 
@@ -31,7 +31,7 @@ A simple and interactive Bingo game built with React, TypeScript, and Zustand fo
 Below are frameworks/ libraries used to bootstrap this project.
 
 - ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-- ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+- ![Zustand](https://img.shields.io/badge/zustand-%23404d59.svg?style=for-the-badge&logo=zustand&logoColor=%2361DAFB)
 - ![Ant-Design](https://img.shields.io/badge/-AntDesign-%230170FE?style=for-the-badge&logo=ant-design&logoColor=white)
 - ![Pnpm](https://img.shields.io/badge/pnpm-%232C8EBB.svg?style=for-the-badge&logo=pnpm&logoColor=white)
 - ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
