@@ -102,4 +102,4 @@ pnpm lint
 Please be informed commits are intentionly not squashed.
 
 ## Open issue
-  None
+  Click on matrix cell at lower device on focus state can be enhanced.
