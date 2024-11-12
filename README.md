@@ -96,7 +96,7 @@ pnpm lint
    ```
 3. Run Docker image
    ```sh
-     docker run -p 4000:4000 -p bingo-app
+     docker run -p 4000:4000 bingo-app
    ```
 
 Please be informed commits are intentionly not squashed.
