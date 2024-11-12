@@ -24,8 +24,9 @@
   }
 
   .bingo-cell {
-    height: 16vw;
-    font-size: 10px;
+    height: 15vw !important;
+    width: 15vw;
+    font-size: 8px !important;
   }
 }
 
