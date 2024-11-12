@@ -27,6 +27,7 @@ const BingoCard: React.FC = () => {
   };
 
   const handleCellClick = (index: number) => {
+    if (index === 12 || selectedCells[index]) return;
     toggleCell(index);
     checkWin();
   };

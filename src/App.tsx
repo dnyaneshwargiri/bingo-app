@@ -12,7 +12,7 @@ const App: React.FC = () => {
   return (
     <div className="main-container">
       <div className="header">
-        <h1 className="app-title">Video Conference Bingo</h1>
+        <h2 className="app-title">Video Conference Bingo</h2>
         <div className="button-group">
           <Button
             type="primary"

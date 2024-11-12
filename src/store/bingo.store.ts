@@ -28,8 +28,12 @@ export const useBingoStore = create<BingoState>((set, get) => ({
     'sorry, I was on mute.',
     'can you repeat, please?',
   ],
-  selectedCells: Array(25).fill(false),
+  selectedCells: Array(25)
+    .fill(false)
+    .map((_, index) => index === 12),
   hasWon: false,
+  achievedCombinations: [],
+  allCellsSelected: false,
 
   toggleCell: (index) =>
     set((state) => {
@@ -40,15 +44,21 @@ export const useBingoStore = create<BingoState>((set, get) => ({
 
   resetGame: () =>
     set({
-      selectedCells: Array(25).fill(false),
+      selectedCells: Array(25)
+        .fill(false)
+        .map((_, index) => index === 12),
       hasWon: false,
+      achievedCombinations: [],
     }),
 
   newGame: () =>
     set({
       phrases: get().shufflePhrases(),
-      selectedCells: Array(25).fill(false),
+      selectedCells: Array(25)
+        .fill(false)
+        .map((_, index) => index === 12),
       hasWon: false,
+      achievedCombinations: [],
     }),
 
   shufflePhrases: () => {
@@ -61,7 +71,8 @@ export const useBingoStore = create<BingoState>((set, get) => ({
   },
 
   checkWin: () => {
-    const { selectedCells, hasWon, setHasWon } = get();
+    const { selectedCells, hasWon, setHasWon, achievedCombinations } = get();
+
     const winningCombinations = [
       [0, 1, 2, 3, 4],
       [5, 6, 7, 8, 9],
@@ -77,18 +88,33 @@ export const useBingoStore = create<BingoState>((set, get) => ({
       [4, 8, 12, 16, 20],
     ];
 
-    const remainingCombinations = winningCombinations.filter((combination) =>
-      combination.some((index) => !selectedCells[index])
+    const allCellsSelected = selectedCells.every(
+      (selected, index) => index === 12 || selected
     );
 
-    const isWinningCombination = remainingCombinations.some((combination) =>
-      combination.every((index) => selectedCells[index])
-    );
-
-    if (isWinningCombination && !hasWon) {
-      setHasWon(true);
+    if (allCellsSelected) {
+      set({ allCellsSelected: true });
       return true;
-    } else if (!isWinningCombination && hasWon) {
+    }
+
+    const newWinningCombination = winningCombinations.find(
+      (combination, index) =>
+        combination.every((i) => selectedCells[i]) &&
+        !achievedCombinations.includes(index)
+    );
+
+    if (newWinningCombination) {
+      set({
+        hasWon: true,
+        achievedCombinations: [
+          ...achievedCombinations,
+          winningCombinations.indexOf(newWinningCombination),
+        ],
+      });
+      return true;
+    }
+
+    if (!newWinningCombination && hasWon) {
       setHasWon(false);
     }
 
@@ -96,4 +122,5 @@ export const useBingoStore = create<BingoState>((set, get) => ({
   },
 
   setHasWon: (value) => set({ hasWon: value }),
+  resetAllCellsSelected: () => set({ allCellsSelected: false }),
 }));

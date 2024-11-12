@@ -3,7 +3,13 @@ import { Modal } from 'antd';
 import { useBingoStore } from '../store/bingo.store';
 
 const BingoAlert: React.FC = () => {
-  const { setHasWon, hasWon } = useBingoStore();
+  const {
+    hasWon,
+    setHasWon,
+    allCellsSelected,
+    newGame,
+    resetAllCellsSelected,
+  } = useBingoStore();
 
   useEffect(() => {
     if (hasWon) {
@@ -14,6 +20,20 @@ const BingoAlert: React.FC = () => {
       });
     }
   }, [hasWon, setHasWon]);
+
+  useEffect(() => {
+    if (allCellsSelected) {
+      Modal.info({
+        title: 'Bingo!',
+        content:
+          'All winning combinations are completed. Click OK to start a new game.',
+        onOk: () => {
+          resetAllCellsSelected();
+          newGame();
+        },
+      });
+    }
+  }, [allCellsSelected, resetAllCellsSelected, newGame]);
 
   return null;
 };
