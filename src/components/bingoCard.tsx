@@ -9,7 +9,7 @@ const BingoCard: React.FC = () => {
   const renderCell = (index: number) => {
     const isCenterCell = index === 12;
     const phrase = isCenterCell
-      ? 'CONF CALL 😊 BINGO'
+      ? 'BINGO 🎉'
       : phrases[index < 12 ? index : index - 1];
 
     return (

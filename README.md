@@ -15,7 +15,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Live Demo</a></li>
+    <li><a href="https://dnyaneshwargiri-bingo-app.netlify.app/" target="blank">Live Demo</a></li>
   </ol>
 </details>
 
@@ -24,7 +24,6 @@
 ## About The Project
 
 A simple and interactive Bingo game built with React, TypeScript, and Zustand for state management, offering an engaging experience with a customizable bingo card. The app allows users to play Bingo with predefined phrases, dynamically generate bingo cards.
-
 
 ### Built With
 
@@ -56,12 +55,12 @@ Below are instructions on setting up your project locally.
 2. Install NPM packages
    ```sh
     pnpm install/ yarn install
-   ``` 
+   ```
 3. Compile bingo app
-    ```sh
-    pnpm build
-    ```
-4. Run 
+   ```sh
+   pnpm build
+   ```
+4. Run
    ```sh
    pnpm start /* production */
    pnpm dev /* dev mode */
@@ -91,8 +90,8 @@ pnpm lint
    ```sh
      chmod +x ./docker.build.sh
    ```
-    ```sh
-     ./docker.build.sh
+   ```sh
+    ./docker.build.sh
    ```
 3. Run Docker image
    ```sh
@@ -102,5 +101,5 @@ pnpm lint
 Please be informed commits are intentionly not squashed.
 
 ## Open issue
-  None
 
+None

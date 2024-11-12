@@ -12,7 +12,7 @@ const App: React.FC = () => {
   return (
     <div className="main-container">
       <div className="header">
-        <h2 className="app-title">Video Conference Bingo</h2>
+        <h2 className="app-title">Bingo Bonanza: Strike It Big!</h2>
         <div className="button-group">
           <Button
             type="primary"
@@ -23,7 +23,7 @@ const App: React.FC = () => {
             }}
             onClick={newGame}
           >
-            New Game
+            New Game ➕
           </Button>
           <Button
             type="default"
@@ -36,7 +36,7 @@ const App: React.FC = () => {
               color: '#000',
             }}
           >
-            Reset Game
+            Reset Game 🔄
           </Button>
         </div>
       </div>
