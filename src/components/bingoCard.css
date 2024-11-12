@@ -1,18 +1,19 @@
 .bingo-card-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh; 
+  align-items: start;
+  height: 100vh;
   padding: 20px;
   box-sizing: border-box;
 }
 
 .bingo-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
   gap: 8px;
   width: 100%;
   max-width: 500px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
 }
 
 .bingo-cell {
@@ -21,8 +22,9 @@
   justify-content: center;
   height: 100px;
   text-align: center;
-  font-size: 14px;
-  background-color: #f0f0f0; 
+  font-size: 12px;
+  background-color: #f9f9f9; 
+  border: 2px solid #e0e0e0; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   cursor: pointer;
@@ -32,6 +34,7 @@
 .bingo-cell.selected {
   background-color: #d1e7dd; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: #a8d5c5;
 }
 
 .middle-circle {

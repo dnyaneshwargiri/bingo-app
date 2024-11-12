@@ -1,30 +1,34 @@
 import React from 'react';
-import { Card, Row, Col, message } from 'antd';
+import { Card, Row, Col } from 'antd';
 import { useBingoStore } from './../store/bingo.store';
 import './bingoCard.css';
 
 const BingoCard: React.FC = () => {
   const { phrases, selectedCells, toggleCell, checkWin } = useBingoStore();
 
-  const renderCell = (index: number) => (
-    <Col span={4} key={index} onClick={() => handleCellClick(index)}>
-      <Card
-        bordered={selectedCells[index]}
-        className={`bingo-cell ${selectedCells[index] ? 'selected' : ''} ${
-          index === 12 ? 'middle-circle' : ''
-        }`}
-      >
-        {index === 12 ? 'CONF CALL 😊 BINGO' : phrases[index]}
-      </Card>
-    </Col>
-  );
+  const renderCell = (index: number) => {
+    const isCenterCell = index === 12;
+    const phrase = isCenterCell
+      ? 'CONF CALL 😊 BINGO'
+      : phrases[index < 12 ? index : index - 1];
+
+    return (
+      <Col span={100} key={index} onClick={() => handleCellClick(index)}>
+        <Card
+          bordered={selectedCells[index]}
+          className={`bingo-cell ${selectedCells[index] ? 'selected' : ''} ${
+            isCenterCell ? 'middle-circle' : ''
+          }`}
+        >
+          {phrase}
+        </Card>
+      </Col>
+    );
+  };
 
   const handleCellClick = (index: number) => {
     toggleCell(index);
-
-    if (checkWin()) {
-      message.success("Bingo! You've won!");
-    }
+    checkWin();
   };
 
   return (

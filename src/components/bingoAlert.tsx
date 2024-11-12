@@ -3,16 +3,17 @@ import { Modal } from 'antd';
 import { useBingoStore } from '../store/bingo.store';
 
 const BingoAlert: React.FC = () => {
-  const { checkWin } = useBingoStore();
+  const { setHasWon, hasWon } = useBingoStore();
 
   useEffect(() => {
-    if (checkWin()) {
+    if (hasWon) {
       Modal.success({
         title: 'Bingo!',
         content: 'Congratulations, you won!',
+        onOk: () => setHasWon(false),
       });
     }
-  }, [checkWin]);
+  }, [hasWon, setHasWon]);
 
   return null;
 };
