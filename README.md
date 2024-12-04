@@ -43,7 +43,7 @@ Below are instructions on setting up your project locally.
 ### Prerequisites
 
 - Node 21
-- Yarn 8.15.4
+- Pnpm 8.14.4
 - Typescript": ^5.6.2
 
 ### Installation
